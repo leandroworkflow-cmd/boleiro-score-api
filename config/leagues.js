@@ -34,6 +34,13 @@ module.exports = [
       'football-data': 'PL',
       thesportsdb: '4328',
     },
+  },{
+    key: 'copa-do-mundo-2026',
+    name: 'Copa do Mundo FIFA 2026',
+    country: 'World',
+    sources: {
+      'football-data': 'WC',
+    },
   },
   // Adicione novas ligas aqui seguindo o mesmo formato.
 ];
