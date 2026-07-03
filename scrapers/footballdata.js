@@ -12,12 +12,14 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
+const ws = require('ws');
 require('dotenv').config();
 const { resolveLeague, resolveTeam, resolveMatch } = require('../lib/resolver');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY // use a service key aqui (não a anon), pois o coletor escreve dados
+  process.env.SUPABASE_SERVICE_KEY,
+  { realtime: { transport: ws } }
 );
 
 const FOOTBALL_DATA_TOKEN = process.env.FOOTBALL_DATA_TOKEN;
